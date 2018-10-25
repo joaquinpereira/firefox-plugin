@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <script src="bootstrap/jquery.min.js"></script>
+    <script src="bootstrap/popper.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <script src="screenshot/painterro-0.2.67.min.js"></script>
+
+        <style>
+        video{  
+            width: 1024px;
+            height: 768px;
+            padding-top: 10px;
+        }
+
+        #myImage{
+            width: 1024px;
+            height: 768px;
+            padding-top: 10px;
+        }
+
+        .container {
+          width: 100%;
+          height: 100%;
+          text-align: center;
+        }
+        .skills {              
+            display: inline-block;
+        }  
+    </style>
+    <title>ScreenShot using RecordRTC</title>
+</head>
+<body>
+    <div class="container">
+        <div class="skills" id="main_page">
+            <h1>ScreenShot using RecordRTC</h1>
+            <button id="btn1" class="btn btn-success">Get photo</button>
+            <button id="btn2" class="btn btn-primary">Start</button>            
+            <br>
+            <canvas id="myImage"></canvas>            
+            <video controls disable-contextmenu cf-video-load="file" id="myVideo"></video>
+        </div>        
+    </div>
+    
+    <script src="screenshot/main.js"></script>
+    <script src="RecordRTC/DiskStorage.js"></script>
+    <script src="background/background.common.js"></script>
+    <script src="preview/preview.js"></script> 
+    
+    </body>
+</html>
+

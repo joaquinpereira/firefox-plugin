@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset=utf-8>        
+        <link href='bootstrap/maven_pro_font.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="bootstrap/booNavigation.css">
+    </head>
+
+    <body>
+    <article id="default-section">
+    <div class="wrapper" id="wrapper">           
+        <nav id="booNavigation" class="booNavigation">
+            <ul style="list-style-type: none; margin-left: -40px;">
+                <li class="navItem" style="width: 306px;">
+                    <div class="my_title" style="text-align: center;"><a class="my_a" href="#" title="First Item">Screen Recording</a></div>
+                    <ul class="navContent" style="list-style-type: none;">
+                        <li>
+                            <ul style="list-style-type: none;margin-left: -80px;">
+                                <li ><a class="my_a" id="full-screen" title="Full Screen"><img class="my_img" src="images/main-icon.png"> Full Screen</a><li/>
+                                <li><a class="my_a" id="take-picture" title="Take a Picture"><img class="my_img" src="images/main-icon.png"> Take a Picture</a><li/>
+                                <li><a class="my_a" id="screenAndMic"  title="Full Screen + Microphone"><img class="my_img" src="images/main-icon.png"> Full Screen + Microphone</a><li/>
+                                <li><a class="my_a" id="window" title="Window"><img class="my_img" src="images/main-icon.png"> Window</a><li/>
+                                <li><a class="my_a" id="windowAndMic" title="Window + Microphone"><img class="my_img" src="images/main-icon.png"> Window + Microphone</a><li/> 
+                                <li><a class="my_a" id="camera" title="Camera Only"><img class="my_img" src="images/main-icon.png"> Camera Only</a><li/>                              
+                                <li><a class="my_a" id="cameraAndMic" title="Camera + Microphone"><img class="my_img" src="images/main-icon.png"> Camera + Microphone</a><li/>      
+                            </ul>
+                        </li>                            
+                    </ul>
+                </li>                    
+            </ul>
+        </nav>
+
+        <nav id="booNavigationTwo" class="booNavigation nav-example">            
+            <ul style="list-style-type: none; margin-left: -40px;">
+                <li class="navItem" style="margin-top: 1px;width: 306px;">
+                    <div class="my_title" style="text-align: center;"><a class="my_a" href="#" title="First Item">Screen Sharing</a></div>
+                    
+                    <ul class="navContent" style="list-style-type: none;">
+                        <li>
+                            <ul style="list-style-type: none;margin-left: -80px;">
+                                <li>
+                                    <a class="my_a" id="full-screen-p" title="Screen Without Audio">
+                                        <img class="my_img" src="images/desktopCapture22.png"> Screen Without Audio
+                                    </a>
+                                <li/>
+                                <li>
+                                    <a class="my_a" id="microphone-screen-p" title="Screen + Microphone">
+                                        <img class="my_img" src="images/desktopCapture22.png"> Screen + Microphone
+                                    </a>
+                                <li/>
+                                <li>
+                                    <a class="my_a" id="full-screen-audio-p" title="Screen + Speakers">
+                                        <img class="my_img" src="images/desktopCapture22.png"> Screen + Speakers
+                                    </a>
+                                <li/>
+                                <li>
+                                    <a class="my_a" id="full-screen-audio-microphone-p" title="Screen + Microphone + Speakers">
+                                        <img class="my_img" src="images/desktopCapture22.png"> Screen + Microphone + Speakers
+                                    </a>
+                                <li/>
+                                <li>
+                                    <a class="my_a" id="full-screen-audio-microphone-camera-p" title="Screen + Microphone + Speakers + Camera">
+                                        <img class="my_img" src="images/desktopCapture22.png"> Screen + Microphone + Speakers + Camera
+                                    </a>
+                                <li/>
+                                <li>
+                                    <a class="my_a" id="selected-tab-p" title="Chrome Tab + Speakers">
+                                        <img class="my_img" src="images/desktopCapture22.png"> Chrome Tab + Speakers
+                                    </a>
+                                <li/>
+                                <li>
+                                    <a class="my_a" id="microphone-screen-camera-p" title="Screen + Camera">
+                                        <img class="my_img" src="images/desktopCapture22.png"> Screen + Camera
+                                    </a>
+                                <li/>
+                                <li>
+                                    <a class="my_a" id="microphone-webcam-p" title="Camera Only">
+                                        <img class="my_img" src="images/desktopCapture22.png"> Camera Only
+                                    </a>
+                                <li/>
+                                <li>                                    
+                                    <a class="my_a" id="btn-options-p" href="../options.html" target="_self">Options</a>
+                                <li/>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+        </div>
+        <div id="videos-container" ></div>
+        <audio id="audio"></audio>     
+        <canvas id="myImage"></canvas>      
+        <div id="imgGet"></div>
+
+        </article>
+
+         <article id="stop-section" style="display: none;" class="btnStop">
+          <div class="btn" id="stop-recording">              
+              <img src="images/recordRTC-progress-1.png"> Stop Recording
+           </div>
+        </article>
+
+        <article id="stop-section2" style="display: none;">
+          <div class="btn" id="stop-sharing">
+              <section><img src="images/desktopCapture22.png"></section>
+              Stop Sharing
+          </div>
+        </article> 
+
+
+
+
+        <!-- Scripts for jQuery and the plugin -->
+        <script src="bootstrap/jquery.min.js"></script>
+        <script src="bootstrap/booNavigation.js"></script>
+        <script src="dropdown.js"></script>
+
+        <!-- Scripts for Recording --> 
+        <script src="RecordRTC/RecordRTC.js"></script>
+        <script src="RecordRTC/DetectRTC.js"></script>
+        <script src="RecordRTC/gif-recorder.js"></script>
+        <script src="RecordRTC/getMediaElement.js"></script>
+        <script src="RecordRTC/adapter-latest.js"></script>    
+        <script src="main.js"></script> 
+
+       
+    </body>
+</html>

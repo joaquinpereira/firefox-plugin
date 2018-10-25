@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="RTCMultiConnection.js"></script>
+	<script src="socket.io.js"></script>
+	<style type="text/css">
+		video {
+		  width: 40%;
+		  border-radius:15px;
+		  margin: 5px 10px;
+		}
+	</style>
+	<script type="text/javascript">
+		var connection = new RTCMultiConnection();
+		// this line is VERY_important
+		connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
+		// all below lines are optional; however recommended.
+
+		connection.session = {
+		    audio: true,
+		    screen: true,
+    		oneway: true
+		};
+
+		connection.sdpConstraints.mandatory = {
+		    OfferToReceiveAudio: true,
+		    OfferToReceiveVideo: true
+		};
+
+		console.log((Math.random() * 100).toString().replace('.', ''));
+
+		var roomid = (Math.random() * 100).toString().replace('.', '');
+
+		connection.onstream = function(event) {
+			if(event.type === "local"){
+		    	document.body.appendChild( event.mediaElement );
+
+		    	//alert(window.location.href+"#"+roomid);
+		    	console.log(window.location.href+"#"+roomid);
+			}
+		};
+
+		connection.openOrJoin(roomid, function() {
+		    var urlToShare = window.location.href + '#' + roomid;
+
+		    // or second technique
+		    //var urlToShare = 'https://yourDomain.com/room.html?roomid=' + roomid;
+		    alert(urlToShare.replace('main', 'view'));
+		    //window.open(urlToShare).replace('main', 'view');
+		});
+
+		//connection.openOrJoin(roomid);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

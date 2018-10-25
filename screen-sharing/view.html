@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="RTCMultiConnection.js"></script>
+	<script src="socket.io.js"></script>
+	<style type="text/css">
+		video {
+		  width: 40%;
+		  border-radius:15px;
+		  margin: 5px 10px;
+		}
+	</style>
+	<script type="text/javascript">
+		var connection = new RTCMultiConnection();
+		// this line is VERY_important
+		connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
+
+		// all below lines are optional; however recommended.
+/*
+		connection.session = {
+		    audio: true,
+		    screen: true,
+    		oneway: true
+		};
+*/
+		connection.sdpConstraints.mandatory = {
+		    OfferToReceiveAudio: true,
+		    OfferToReceiveVideo: true
+		};
+
+		connection.onstream = function(event) {
+			if(event.type === "remote"){
+				event.mediaElement.setAttributeNode(document.createAttribute('autoplay'));
+		    	event.mediaElement.setAttributeNode(document.createAttribute('playsinline'));
+			    event.mediaElement.setAttributeNode(document.createAttribute('controls'));
+
+				document.body.appendChild( event.mediaElement );	
+			}		    
+		};		
+		//console.log(location);
+		console.log(location.href);
+
+		if(location.hash.length > 1) {
+		    var roomid = location.hash.replace('#', '');
+		    console.log(roomid);
+		    // auto join room
+		    connection.openOrJoin(roomid);
+		}else{
+			alert("Error esta ingresando sin el id de la sala");
+		}
+
+		//connection.openOrJoin(predefinedRoomId);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

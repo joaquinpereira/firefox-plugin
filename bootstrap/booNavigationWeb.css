@@ -1,0 +1,116 @@
+/**
+ * Name: booNavigation.css
+ * Date:Sun 16 Feb 2014
+ * Author: Noemi Losada Estrella <info@noemilosada.com>
+ * Creative Commons License <http://creativecommons.org/licenses/by-sa/3.0/> 
+ */
+
+/** General
+================================================== */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #333;
+}
+
+.wrapper {
+    margin-top: 20px;
+    margin-left: 2px;
+    width: 960px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.my_a {
+    color: #333;
+    text-decoration: none;
+}
+
+.my_img{
+    height: 20px;
+}
+
+/** Navigation theme
+================================================== */
+.booNavigation {
+    position: relative;
+}
+
+.booNavigation li.navItem {
+    background-color: #04436a;    
+    padding: 5px 20px;
+    float: left;
+    text-decoration: none;
+    transition: all .3s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 2px solid #04436a;
+}
+
+.booNavigation li.navItem:hover {
+    background-color:rgb(30,93,132);
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 2px solid #04436a;
+    cursor: pointer;
+}
+
+.booNavigation li.navItem > a {
+    color: #fff;
+}
+
+.booNavigation li.navItem .navContent {
+    background-color: #04436a;
+    left: 0;
+    position: absolute;
+    top: 35px;
+    width: 350px;
+    z-index: 999;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 2px solid #04436a;
+}
+
+.booNavigation .navContent > li {
+    color: #fff;
+    float: left;
+    padding: 10px;
+    width: 95%;
+}
+
+.booNavigation .navContent ul li a {
+    color: #fff;
+    display: block;
+    padding: 10px;
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+}
+
+.booNavigation .navContent ul li a:hover {
+    background-color:rgb(30,93,132);
+    padding-left: 20px;
+}
+
+/** Navigation examples
+================================================== */
+.nav-example {
+    clear: left;
+}

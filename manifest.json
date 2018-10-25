@@ -1,0 +1,105 @@
+{  
+   "name":"Bunker Tools.",
+   "short_name":"Bunker Tools.",
+   "author":"Joaquin Pereira",
+   "version":"0.0.0.1",
+   "manifest_version":2,
+   "minimum_chrome_version":"49",
+   "description":"Record and Sharing your screen activity, camera, mic, tab, speakers in HD video format",
+   "homepage_url":"https://bunker.globalipcloud.com",
+   "background":{  
+      "scripts":[  
+         "screen-recording/background/background.common.js",
+         "screen-recording/background/background.js",
+         "screen-recording/background/background.desktopCapture.js",
+         "screen-recording/background/background.tabCapture.js",
+         "screen-recording/background/background.badgeText.js",
+         "screen-recording/background/background.getUserMedia.js",         
+         "screen-recording/background/background.players.js",
+         "screen-recording/RecordRTC/MediaStreamRecorder.js",
+         "screen-recording/RecordRTC/MultiStreamRecorder.js",
+         "screen-recording/RecordRTC/DiskStorage.js",  
+         "desktopCapture-p2p/socket.io.js",
+         "desktopCapture-p2p/adapter.js",
+         "desktopCapture-p2p/RTCMultiConnection.min.js",
+         "desktopCapture-p2p/CodecsHandler.js",
+         "desktopCapture-p2p/IceServersHandler.js",
+         "desktopCapture-p2p/MultiStreamsMixer.js",                 
+         "desktopCapture-p2p/desktop-capturing.js"
+      ],
+      "persistent":false
+   },
+   "content_scripts": [
+    {
+      "matches": ["https://bunker.globalipcloud.com/*","http://localhost/z/*"],
+      "js": ["bootstrap/jquery.min.js","screen-recording/background/background.inyeccion.js"]
+    }
+   ],   
+   "browser_action":{  
+      "default_icon":"screen-recording/images/main-icon.png",
+      "default_title":"Record Your Screen, Tab or Camera",
+      "default_popup": "screen-recording/dropdown.html"
+   },
+   "icons":{  
+      "16":"screen-recording/images/main-icon.png",
+      "22":"screen-recording/images/main-icon.png",
+      "32":"screen-recording/images/main-icon.png",
+      "48":"screen-recording/images/main-icon.png",
+      "128":"screen-recording/images/main-icon.png"
+   },
+   "permissions":[  
+      "desktopCapture",
+      "storage",
+      "tabs",
+      "tabCapture",
+      "activeTab",
+      "<all_urls>",
+      "identity",
+      "https://www.googleapis.com/*",
+      "http://*/",
+      "https://*/"      
+   ],
+   "oauth2": {
+       "client_id": "41556190767-44cbqasurg3dhfr9hmj1v90q5v8r9v46.apps.googleusercontent.com",
+       "scopes": [
+         "https://www.googleapis.com/auth/youtube.upload",
+         "https://www.googleapis.com/auth/youtube"
+       ]
+   },
+   "content_security_policy": "script-src 'self' 'unsafe-eval' https://apis.google.com; object-src 'self'",   
+   "web_accessible_resources":[  
+      "screen-recording/images/main-icon.png",      
+      "desktopCapture-p2p/images/desktopCapture48.png",      
+      "desktopCapture-p2p/images/desktopCapture22.png",
+      "screen-recording/images/recordRTC-progress-1.png",
+      "screen-recording/dropdown2.html",
+      "bootstrap/font-awesome.min.css",
+      "bootstrap/bootstrap.min.css",
+      "bootstrap/jquery.min.js",
+      "bootstrap/popper.js",
+      "bootstrap/bootstrap.min.js",
+      "screen-recording/dropdown3.html",
+      "bootstrap/maven_pro_font.css",
+      "bootstrap/booNavigation.css",
+      "bootstrap/booNavigation.js",
+      "bootstrap/main.btn.share-record-screen.css",
+      "screen-recording/background/background.desktopCapture.js",
+      "bootstrap/main.btn.share-record-screen.js"
+   ],
+   "externally_connectable": {
+       "matches": ["https://bunker.globalipcloud.com/*","http://localhost/z/*"],
+       "accept_tls_channel_id":true
+   },
+   "options_ui":{  
+      "page":"screen-recording/options.html",
+      "chrome_style":false,
+      "open_in_tab": true
+   },   
+  "applications": {
+      "gecko": {
+        "id": "jpereira@gmail.com"        
+      }
+    }
+
+}
+
